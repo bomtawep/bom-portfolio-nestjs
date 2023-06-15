@@ -1,11 +1,9 @@
-FROM node:16.13.1-alpine3.14
+FROM node:18
 
-WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json", "tsconfig.json", "./"]
-COPY ./src ./src
-COPY ./images ./images
-COPY ./dist ./dist
+WORKDIR /app
+COPY package*.json ./
 RUN yarn install
+COPY . .
+RUN yarn build
 
-EXPOSE 8080
-CMD yarn start:prod
+CMD [ "yarn", "start:dev" ]

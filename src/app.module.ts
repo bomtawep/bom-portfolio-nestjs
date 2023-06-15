@@ -1,15 +1,17 @@
 import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
-import { CustomersModule } from './customers/customers.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import entities from './typeorm';
+import { entities } from './portfolio/entities';
+import { AppService } from './app.service'
+import { AppController } from './app.controller';
+import { PortfolioModule } from './portfolio/portfolio.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
+      name: 'bomorder',
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
         host: configService.get('DB_HOST'),
@@ -22,10 +24,9 @@ import entities from './typeorm';
       }),
       inject: [ConfigService],
     }),
-    UsersModule,
-    CustomersModule,
+    PortfolioModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
