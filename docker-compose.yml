@@ -1,17 +1,6 @@
 version: '3.8'
 services:
-  postgres:
-    container_name: postgres
-    image: postgres
-    ports:
-      - '5432:${DB_PORT}'
-    volumes:
-      - /etc
-    environment:
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-
-  bom-order-nodejs:
+  bom-order-nestjs:
     container_name: bomorder
     restart: always
     build: .
@@ -19,19 +8,3 @@ services:
       - ${PORT}:${PORT}
     volumes:
       - /usr/src/app
-    depends_on:
-      - postgres
-      
-  pgadmin:
-    container_name: pgadmin_container
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-    volumes:
-      - /var/lib/pgadmin
-    ports:
-      - "${PGADMIN_PORT:-5050}:80"
-    depends_on:
-      - postgres
