@@ -18,12 +18,10 @@ export class PortfolioController {
   getportfolios() {
     return this.portfolioService.getPortfolios();
   }
-
   @Get('/:id')
   findPortfoliosById(@Param('id', ParseIntPipe) id: number) {
     return this.portfolioService.findPortfoliosById(id);
   }
-
   @Post('/')
   @UsePipes(ValidationPipe)
   createPortfolios(@Body() portfolioDto: PortfolioDto) {
