@@ -1,11 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
 
 @Entity('portfolio')
 export class Portfolio {
-  @PrimaryGeneratedColumn({
-    type: 'int',
-    name: 'id',
-  })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({
@@ -33,15 +30,12 @@ export class Portfolio {
   })
   email: string;
 
-  @Column({
-    nullable: false,
-    default: '',
-  })
-  created: Date;
+  @CreateDateColumn()
+  created_at: Date;
 
-  @Column({
-    nullable: false,
-    default: '',
-  })
-  updated: Date;
+  @UpdateDateColumn()
+  updated_at: Date;
+
+  @DeleteDateColumn()
+  deleted_at: Date;
 }

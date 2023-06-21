@@ -13,4 +13,8 @@ export class AppController {
     getHello(): string {
         return this.appService.getHello();
     }
+    @Get('/health-check')
+    getHelpCheck(): string {
+        return this.appService.getHelpCheck();
+    }
 }
