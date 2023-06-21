@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cf2f87a8-caeb-4066-835b-b769a361f580" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/bom-order-nestjs.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/controllers/customers.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/controllers/customers.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/customers.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/dtos/CreateCustomer.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/services/customers.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/services/customers.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/typeorm/customer.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/typeorm/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/typeorm/user.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/controllers/users.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/controllers/users.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/dtos/CreateUser.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/services/users.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/services/users.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/users.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QhSFKXDtcQa2HOlDI1jt7ZTlaT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/bomtawep/Documents/Dev/NestJs/bom-order-nestjs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Users/bomtawep/Documents/Dev/NestJs/bom-order-nestjs/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "/Users/bomtawep/Documents/Dev/NestJs/bom-order-nestjs/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/users/services" />
+      <recent name="$PROJECT_DIR$/src/users/controllers" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/typeorm" />
+      <recent name="$PROJECT_DIR$/src/users" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf2f87a8-caeb-4066-835b-b769a361f580" name="Changes" comment="" />
+      <created>1685804216290</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685804216290</updated>
+      <workItem from="1685804217314" duration="958000" />
+      <workItem from="1685805183032" duration="62000" />
+      <workItem from="1685805249123" duration="182000" />
+      <workItem from="1685805435777" duration="1300000" />
+      <workItem from="1685846853898" duration="1825000" />
+      <workItem from="1685848688322" duration="6158000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
