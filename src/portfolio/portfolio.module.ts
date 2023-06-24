@@ -8,6 +8,6 @@ import { PortfolioService } from './services/portfolio.service';
     imports: [TypeOrmModule.forFeature([Portfolio])],
     controllers: [PortfolioController],
     providers: [PortfolioService],
-    //exports: [PortfolioService],
+    exports: [PortfolioService],
   })
   export class PortfolioModule {}

@@ -6,6 +6,7 @@ import { AppService } from './app.service'
 import { AppController } from './app.controller';
 import { PortfolioModule } from './portfolio/portfolio.module';
 import appConfig from './config/configuration';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import appConfig from './config/configuration';
       isGlobal: true,
     }),
     PortfolioModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -8,7 +8,9 @@ import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const apiPrefix = process.env.API_PREFIX || '/api';
+  const configService = app.get<ConfigService>(ConfigService);
+  const port = configService.get('PORT');
+  const apiPrefix = configService.get('API_PREFIX');
   const logger = new Logger('bootstrap');
   const config = new DocumentBuilder()
     .setTitle('bomorder')
@@ -24,8 +26,6 @@ async function bootstrap() {
     .addSecurityRequirements('bearer')
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  const configService = app.get<ConfigService>(ConfigService);
-  const port = configService.get('PORT');
 
   app.use(json({ limit: '50mb' }));
   app.use(urlencoded({ limit: '50mb', extended: true }));
