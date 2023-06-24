@@ -4,7 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as mementTimezone from 'moment-timezone';
 import { Logger } from '@nestjs/common';
 import { urlencoded, json } from 'express';
-//import { ConfigService } from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -24,6 +24,8 @@ async function bootstrap() {
     .addSecurityRequirements('bearer')
     .build();
   const document = SwaggerModule.createDocument(app, config);
+  const configService = app.get<ConfigService>(ConfigService);
+  const port = configService.get('PORT');
 
   app.use(json({ limit: '50mb' }));
   app.use(urlencoded({ limit: '50mb', extended: true }));
@@ -31,8 +33,8 @@ async function bootstrap() {
   mementTimezone.tz.setDefault('Asia/Bangkok');
   SwaggerModule.setup('api', app, document);
   try{
-    await app.listen(process.env.PORT || 3000);
-    logger.log(`Server running on ${app.getUrl}`);
+    await app.listen(port);
+    logger.log(`Server running on ${app.getHttpServer().address().port}`)
   }catch(error){
     logger.error('Error: ', error);
   }
