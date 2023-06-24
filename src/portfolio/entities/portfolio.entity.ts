@@ -30,6 +30,13 @@ export class Portfolio {
   })
   email: string;
 
+  @Column({
+    nullable: false,
+    default: '',
+    name: 'status',
+  })
+  status: string;
+
   @CreateDateColumn()
   created_at: Date;
 
