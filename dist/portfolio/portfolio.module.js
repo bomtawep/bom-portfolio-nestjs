@@ -18,7 +18,7 @@ exports.PortfolioModule = PortfolioModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([portfolio_entity_1.Portfolio])],
         controllers: [portfolio_controller_1.PortfolioController],
-        providers: [portfolio_service_1.PortfolioService]
+        providers: [portfolio_service_1.PortfolioService],
     })
 ], PortfolioModule);
 //# sourceMappingURL=portfolio.module.js.map

@@ -25,14 +25,16 @@ async function bootstrap() {
         .addSecurityRequirements('bearer')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
+    const configService = app.get(config_1.ConfigService);
+    const port = configService.get('PORT');
     app.use((0, express_1.json)({ limit: '50mb' }));
     app.use((0, express_1.urlencoded)({ limit: '50mb', extended: true }));
     app.enableCors();
     mementTimezone.tz.setDefault('Asia/Bangkok');
     swagger_1.SwaggerModule.setup('api', app, document);
     try {
-        await app.listen(app.get(config_1.ConfigService).get('port') || 3000);
-        logger.log(`Server running on ${app.getUrl}`);
+        await app.listen(port);
+        logger.log(`Server running on ${app.getHttpServer().address().port}`);
     }
     catch (error) {
         logger.error('Error: ', error);

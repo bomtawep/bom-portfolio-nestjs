@@ -1,4 +1,4 @@
 export declare class AppService {
-    constructor();
     getHello(): string;
+    getHelpCheck(): string;
 }

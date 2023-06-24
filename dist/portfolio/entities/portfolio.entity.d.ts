@@ -4,6 +4,7 @@ export declare class Portfolio {
     lastname: string;
     gender: string;
     email: string;
-    created: Date;
-    updated: Date;
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
 }

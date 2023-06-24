@@ -14,26 +14,19 @@ const entities_1 = require("./portfolio/entities");
 const app_service_1 = require("./app.service");
 const app_controller_1 = require("./app.controller");
 const portfolio_module_1 = require("./portfolio/portfolio.module");
+const configuration_1 = require("./config/configuration");
 let AppModule = exports.AppModule = class AppModule {
 };
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRootAsync({
-                imports: [config_1.ConfigModule],
-                name: 'bomorder',
-                useFactory: (configService) => ({
-                    type: 'postgres',
-                    host: configService.get('DB_HOST'),
-                    port: +configService.get('DB_PORT'),
-                    username: configService.get('DB_USERNAME'),
-                    password: configService.get('DB_PASSWORD'),
-                    database: configService.get('DB_NAME'),
-                    entities: entities_1.entities,
-                    synchronize: true,
-                }),
+                useFactory: (configService) => (Object.assign(Object.assign({}, configService.get('database')), { entities: [...entities_1.entities] })),
                 inject: [config_1.ConfigService],
+            }),
+            config_1.ConfigModule.forRoot({
+                load: [configuration_1.default],
+                isGlobal: true,
             }),
             portfolio_module_1.PortfolioModule,
         ],

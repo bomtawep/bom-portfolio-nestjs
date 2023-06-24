@@ -20,6 +20,9 @@ let AppController = exports.AppController = class AppController {
     getHello() {
         return this.appService.getHello();
     }
+    getHelpCheck() {
+        return this.appService.getHelpCheck();
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -27,6 +30,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
+__decorate([
+    (0, common_1.Get)('/health-check'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], AppController.prototype, "getHelpCheck", null);
 exports.AppController = AppController = __decorate([
     (0, swagger_1.ApiTags)("Health Check API"),
     (0, common_1.Controller)(),

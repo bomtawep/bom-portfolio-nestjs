@@ -14,10 +14,7 @@ const typeorm_1 = require("typeorm");
 let Portfolio = exports.Portfolio = class Portfolio {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)({
-        type: 'bigint',
-        name: 'portfolio_id',
-    }),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], Portfolio.prototype, "id", void 0);
 __decorate([
@@ -45,24 +42,22 @@ __decorate([
     (0, typeorm_1.Column)({
         nullable: false,
         default: '',
-        name: 'email_address',
+        name: 'email',
     }),
     __metadata("design:type", String)
 ], Portfolio.prototype, "email", void 0);
 __decorate([
-    (0, typeorm_1.Column)({
-        nullable: false,
-        default: '',
-    }),
+    (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
-], Portfolio.prototype, "created", void 0);
+], Portfolio.prototype, "created_at", void 0);
 __decorate([
-    (0, typeorm_1.Column)({
-        nullable: false,
-        default: '',
-    }),
+    (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
-], Portfolio.prototype, "updated", void 0);
+], Portfolio.prototype, "updated_at", void 0);
+__decorate([
+    (0, typeorm_1.DeleteDateColumn)(),
+    __metadata("design:type", Date)
+], Portfolio.prototype, "deleted_at", void 0);
 exports.Portfolio = Portfolio = __decorate([
     (0, typeorm_1.Entity)('portfolio')
 ], Portfolio);
