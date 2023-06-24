@@ -59,6 +59,10 @@ export class PortfolioService {
   ) {
     try {
       this.portfolioRepository.update(id, portfolioDto);
+      return{
+        statusCode: HttpStatus.OK,
+        message: 'Success',
+      }
     } catch (error) {
       console.log(error);
     }
