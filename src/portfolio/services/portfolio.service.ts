@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Portfolio } from '../entities/portfolio.entity';
@@ -11,16 +11,60 @@ export class PortfolioService {
     private readonly portfolioRepository: Repository<Portfolio>,
   ) {}
 
+  async getPortfolios() {
+    try{
+      const response = await this.portfolioRepository.find();
+      return{
+        statusCode: HttpStatus.OK,
+        message: 'Success',
+        data: response,
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
   createPortfolios(portfolioDto: PortfolioDto) {
-    const newPortfolio = this.portfolioRepository.create(portfolioDto);
-    return this.portfolioRepository.save(newPortfolio);
+    try {
+      const newPortfolio = this.portfolioRepository.create(portfolioDto);
+      this.portfolioRepository.save(newPortfolio);
+      return{
+        statusCode: HttpStatus.OK,
+        message: 'Success',
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
-
-  getPortfolios() {
-    return this.portfolioRepository.find();
+  async findPortfoliosById(id: number){
+    try {
+      const response = await this.portfolioRepository.findOne({ where: { id: id } });
+      if(!response){
+        return{
+          statusCode: HttpStatus.NOT_FOUND,
+          message: 'Not Found',
+        }
+      }
+      return{
+        statusCode: HttpStatus.OK,
+        message: 'Success',
+        data: response,
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
-
-  findPortfoliosById(id: any) {
-    return this.portfolioRepository.findOne(id);
+  updatePortfolios(
+    id: number,
+    portfolioDto: PortfolioDto
+  ) {
+    try {
+      this.portfolioRepository.update(id, portfolioDto);
+      return{
+        statusCode: HttpStatus.OK,
+        message: 'Success',
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
