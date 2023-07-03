@@ -1,19 +1,19 @@
 import { Injectable, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Portfolio } from '../entities/portfolio.entity';
-import { PortfolioDto } from 'src/portfolio/dtos/portfolio.dto';
+import { PersonalData } from '../entities/personalData.entity';
+import { PersonalDataDto } from 'src/portfolio/dtos/personalData.dto';
 
 @Injectable()
 export class PortfolioService {
   constructor(
-    @InjectRepository(Portfolio)
-    private readonly portfolioRepository: Repository<Portfolio>,
+    @InjectRepository(PersonalData)
+    private readonly personalDataRepository: Repository<PersonalData>,
   ) {}
 
   async getPortfolios() {
     try{
-      const response = await this.portfolioRepository.find();
+      const response = await this.personalDataRepository.find();
       return{
         statusCode: HttpStatus.OK,
         message: 'Success',
@@ -23,10 +23,10 @@ export class PortfolioService {
       console.log(error);
     }
   }
-  createPortfolios(portfolioDto: PortfolioDto) {
+  createPortfolios(personalDataDto: PersonalDataDto) {
     try {
-      const newPortfolio = this.portfolioRepository.create(portfolioDto);
-      this.portfolioRepository.save(newPortfolio);
+      const newPersonalData = this.personalDataRepository.create(personalDataDto);
+      this.personalDataRepository.save(newPersonalData);
       return{
         statusCode: HttpStatus.OK,
         message: 'Success',
@@ -37,7 +37,7 @@ export class PortfolioService {
   }
   async findPortfoliosById(id: number){
     try {
-      const response = await this.portfolioRepository.findOne({ where: { id: id } });
+      const response = await this.personalDataRepository.findOne({ where: { id: id } });
       if(!response){
         return{
           statusCode: HttpStatus.NOT_FOUND,
@@ -55,10 +55,10 @@ export class PortfolioService {
   }
   updatePortfolios(
     id: number,
-    portfolioDto: PortfolioDto
+    personalDataDto: PersonalDataDto,
   ) {
     try {
-      this.portfolioRepository.update(id, portfolioDto);
+      this.personalDataRepository.update(id, personalDataDto);
       return{
         statusCode: HttpStatus.OK,
         message: 'Success',

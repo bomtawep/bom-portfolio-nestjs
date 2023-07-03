@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Portfolio } from 'src/portfolio/entities/portfolio.entity';
+import { PersonalData } from 'src/portfolio/entities/personalData.entity';
 import { PortfolioController } from './controllers/portfolio.controller';
 import { PortfolioService } from './services/portfolio.service';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Portfolio])],
+    imports: [TypeOrmModule.forFeature([PersonalData])],
     controllers: [PortfolioController],
     providers: [PortfolioService],
     exports: [PortfolioService],
