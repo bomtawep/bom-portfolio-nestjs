@@ -10,7 +10,7 @@ import {
   Patch,
   //UseGuards,
 } from '@nestjs/common';
-import { PortfolioDto } from 'src/portfolio/dtos/portfolio.dto';
+import { PersonalDataDto } from 'src/portfolio/dtos/personalData.dto';
 import { PortfolioService } from 'src/portfolio/services/portfolio.service';
 //import { AuthGuard } from 'src/auth/guards/auth.guard';
 
@@ -31,15 +31,15 @@ export class PortfolioController {
   //@UseGuards(AuthGuard)
   @Post('/')
   @UsePipes(ValidationPipe)
-  createPortfolios(@Body() portfolioDto: PortfolioDto) {
-    return this.portfolioService.createPortfolios(portfolioDto);
+  createPortfolios(@Body() personalDataDto: PersonalDataDto) {
+    return this.portfolioService.createPortfolios(personalDataDto);
   }
   //@UseGuards(AuthGuard)
   @Patch('/:id')
   updatePortfolios(
     @Param('id', ParseIntPipe) id: number,
-    @Body() portfolioDto: PortfolioDto,
+    @Body() personalDataDto: PersonalDataDto,
   ) {
-    return this.portfolioService.updatePortfolios(id, portfolioDto);
+    return this.portfolioService.updatePortfolios(id, personalDataDto);
   }
 }
