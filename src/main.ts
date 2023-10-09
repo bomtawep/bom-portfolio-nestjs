@@ -39,4 +39,4 @@ async function bootstrap() {
     logger.error('Error: ', error);
   }
 }
-bootstrap();
+bootstrap().then(r => console.log('Server running'));
