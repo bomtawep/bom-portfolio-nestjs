@@ -11,18 +11,16 @@ services:
       - POSTGRES_HOST=${DB_HOST}
       - POSTGRES_USER=${DB_USERNAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_DB=${DB_NAME}
-      - PGDATA=/var/lib/postgresql/data/pgdata
       - POSTGRES_PORT=${DB_PORT}
-  bom-order-nestjs:
-    depends_on:
-      - postgres
-    container_name: bomorder
-    image: bom-order-nestjs
+  bom-portfolio-nestjs:
+    container_name: bom-portfolio
+    image: bom-portfolio
     restart: always
     build: .
     ports:
       - ${PORT}:${PORT}
+    depends_on:
+      - postgres
     volumes:
       - /usr/src/app
